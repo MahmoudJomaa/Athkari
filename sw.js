@@ -1,4 +1,4 @@
-const V = 'athkari-v1';
+const V = 'athkari-v2';
 const SHELL = ['./', './index.html', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
@@ -25,4 +25,4 @@ self.addEventListener('fetch', e => {
     }).catch(() => hit);
     return hit || net;
   }));
-});
+});

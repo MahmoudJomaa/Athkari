@@ -108,6 +108,10 @@ select{width:100%;min-height:48px;border-radius:12px;border:1px solid var(--line
 .pop{animation:pop .25s ease}
 .tb.pl{animation:pulse .45s ease-out}
 .cf{position:absolute;top:0;width:8px;height:12px;border-radius:2px;animation:fall 2.2s ease-in forwards}
+.inp{width:100%;min-height:48px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--tx);font-size:16px;padding:10px 12px;margin-bottom:10px;-webkit-user-select:text;user-select:text;cursor:text;font-family:inherit;resize:vertical}
+.inp:focus{outline:2px solid var(--ac);outline-offset:-1px}
+.btn.dash{border-style:dashed;color:var(--ac);width:100%;font-weight:500}
+.lnk{background:none;border:none;color:var(--tx3);font-size:13px;min-height:36px;padding:0 6px}
 @media (min-width:700px){:root{--zk:24px}}
 </style>
 </head>
@@ -176,6 +180,22 @@ f:'من هدي النبي ﷺ الذي علّمه أصحابه صباحًا وم
 eg:'ده سيد الاستغفار. بتقول لربنا: انت ربي وأنا عبدك، ماشي على عهدك على قد ما أقدر، معترف بنعمتك عليّا ومعترف بذنبي، فاغفرلي لأن مفيش غيرك بيغفر.',
 fs:'سيد الاستغفار، يجمع التوحيد والإقرار بالعبودية، والوفاء بالعهد قدر الاستطاعة، والاعتراف بالنعمة والذنب، ثم طلب المغفرة ممن لا يغفر الذنوب سواه.',
 f:'من قالها من النهار موقنًا بها فمات من يومه قبل أن يُمسي فهو من أهل الجنة، ومن قالها من الليل موقنًا بها فمات قبل أن يُصبح فهو من أهل الجنة.',s:'رواه البخاري.'},
+{t:'b',n:4,m:'اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ',e:'اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ',
+eg:'بتشهّد ربنا، وتشهّد الملايكة اللي شايلين العرش وكل الملايكة وكل المخلوقات، إنك مؤمن إن مفيش إله غيره وإن سيدنا محمد عبده ورسوله.',
+fs:'إشهادٌ لله وحملة عرشه وملائكته وجميع خلقه على توحيده وإفراده بالألوهية، وعلى الإقرار بعبودية محمد ﷺ ورسالته.',
+f:'من قالها مرة أعتق الله ربعه من النار، ومن قالها مرتين أعتق الله نصفه، ومن قالها ثلاثًا أعتق الله ثلاثة أرباعه، ومن قالها أربعًا أعتقه الله من النار.',s:'رواه أبو داود، وحسّن إسناده ابن باز في تحفة الأخيار.'},
+{t:'b',n:1,m:'اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ',e:'اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ',
+eg:'بتعترف إن كل نعمة عندك أو عند أي حد في الدنيا هي من ربنا لوحده، فبتحمده وتشكره عليها.',
+fs:'اعترافٌ بأن كل نعمة على العبد أو على أحدٍ من الخلق فهي من الله وحده، يتبعه حمده وشكره عليها.',
+f:'من قالها حين يُصبح فقد أدّى شكر يومه، ومن قالها حين يُمسي فقد أدّى شكر ليلته.',s:'رواه أبو داود والنسائي في الكبرى، وحسّن إسناده ابن باز.'},
+{t:'b',n:3,m:'اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَهَ إِلَّا أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ، اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لَا إِلَهَ إِلَّا أَنْتَ',
+eg:'بتطلب من ربنا يعافيك في جسمك وسمعك ونظرك، وتستعيذ بيه من الكفر ومن الفقر ومن عذاب القبر.',
+fs:'سؤالٌ لله العافية في البدن والسمع والبصر، واستعاذةٌ به من الكفر والفقر وعذاب القبر، مع تجديد كلمة التوحيد.',
+f:'كان النبي ﷺ يدعو بهن ثلاثًا حين يُصبح وثلاثًا حين يُمسي، وكان أبو بكرة رضي الله عنه يحب أن يستنّ بسنّته.',s:'رواه أبو داود وأحمد، وحسّن إسناده ابن باز.'},
+{t:'b',n:7,m:'حَسْبِيَ اللَّهُ لَا إِلَهَ إِلَّا هُوَ، عَلَيْهِ تَوَكَّلْتُ، وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ',
+eg:'ربنا كفايتي، مفيش إله غيره، متوكل عليه هو بس، وهو رب العرش العظيم. لما تقولها بيقين بتسلّم همومك كلها لربنا.',
+fs:'إعلانٌ بأن الله كافي العبد، وإفرادٌ له بالألوهية، وتفويضٌ للأمر إليه وحده، وهو رب العرش العظيم.',
+f:'من قالها حين يُصبح وحين يُمسي سبع مرات كفاه الله ما أهمّه من أمر الدنيا والآخرة.',s:'رواه ابن السني مرفوعًا، وأبو داود موقوفًا على أبي الدرداء رضي الله عنه، وصحّح إسناده الأرناؤوط.'},
 {t:'b',n:1,m:'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِي وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي',
 eg:'بتطلب من ربنا يسامحك ويعافيك في دينك ودنيتك وبيتك وفلوسك، ويستر عيوبك، ويطمّن خوفك، ويحرسك من كل ناحية.',
 fs:'دعاءٌ جامع بالعفو والعافية في الدين والدنيا والأهل والمال، وبستر العيوب وتأمين المخاوف، وبالحفظ من الجهات الست.',
@@ -200,6 +220,10 @@ f:'أوصى به النبي ﷺ ابنته فاطمة رضي الله عنها �
 eg:'بتأكد إنك صاحي أو بايت على الإسلام والتوحيد، وعلى دين النبي ﷺ وطريق سيدنا إبراهيم.',
 fs:'تجديدٌ للعهد على الفطرة وكلمة التوحيد، ودين النبي محمد ﷺ، وملة إبراهيم عليه السلام المائلة عن الشرك إلى التوحيد.',
 f:'كان النبي ﷺ يقوله إذا أصبح وإذا أمسى.',s:'رواه أحمد، وصحّحه الألباني.'},
+{t:'b',n:1,m:'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ، اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْيَوْمِ: فَتْحَهُ وَنَصْرَهُ وَنُورَهُ وَبَرَكَتَهُ وَهُدَاهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهِ وَشَرِّ مَا بَعْدَهُ',e:'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ، اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذِهِ اللَّيْلَةِ: فَتْحَهَا وَنَصْرَهَا وَنُورَهَا وَبَرَكَتَهَا وَهُدَاهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهَا وَشَرِّ مَا بَعْدَهَا',
+eg:'بتعترف إن الملك كله لربنا، وبتطلب منه خير يومك أو ليلتك بكل تفاصيله: إن أبوابه تتفتح لك، وتنتصر فيه، ويبقى فيه نور وبركة وهداية، وتستعيذ بيه من أي شر فيه أو بعده.',
+fs:'إقرارٌ بأن الملك لله رب العالمين، ثم سؤالٌ لخير اليوم أو الليلة مفصّلًا: الفتح والنصر والنور والبركة والهدى، واستعاذةٌ من شرّ ما فيه وما بعده.',
+f:'قال النبي ﷺ: إذا أصبح أحدكم فليقل هذا الدعاء، ثم إذا أمسى فليقل مثل ذلك.',s:'رواه أبو داود، وحسّن إسناده شعيب وعبد القادر الأرناؤوط في تحقيق زاد المعاد.'},
 {t:'b',n:100,m:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
 eg:'بتنزّه ربنا عن أي نقص وبتحمده في نفس الوقت. كلمتين خفاف بس تقال جدًا في الميزان.',
 fs:'تنزيهٌ لله عن كل نقص مقرونٌ بحمده والثناء عليه بصفات الكمال.',
@@ -208,7 +232,7 @@ f:'لم يأتِ أحد يوم القيامة بأفضل مما جاء به قا
 eg:'كلمة التوحيد كاملة: مفيش إله غير ربنا، الملك كله له والحمد كله له، ويقدر على كل حاجة.',
 fs:'أفضل ما قاله النبيون: إفرادٌ لله بالألوهية، وإثباتٌ للملك والحمد له، ولقدرته التامة على كل شيء.',
 f:'من قالها مائة مرة في يوم كانت له عدل عشر رقاب، وكُتبت له مائة حسنة، ومُحيت عنه مائة سيئة، وكانت له حرزًا من الشيطان يومه حتى يُمسي. وورد قولها عشرًا صباحًا ومساءً.',s:'المائة: البخاري ومسلم. العشر: النسائي في الكبرى وصحّحه الألباني.'},
-{t:'m',n:3,m:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ',
+{t:'b',n:3,m:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ، وَرِضَا نَفْسِهِ، وَزِنَةَ عَرْشِهِ، وَمِدَادَ كَلِمَاتِهِ',
 eg:'تسبيح بعدد كل المخلوقات، وعلى قد ما يرضي ربنا، وبوزن عرشه، وبكمية كلماته اللي مالهاش آخر.',
 fs:'تسبيحٌ مضاعف يُقدَّر بعدد المخلوقات ورضا الله ووزن عرشه ومداد كلماته، وهو من جوامع الذكر.',
 f:'قالها النبي ﷺ لجويرية رضي الله عنها وأخبر أنها لو وُزنت بما قالت منذ الصباح لوزنته.',s:'رواه مسلم.'},
@@ -240,15 +264,18 @@ var TP=['سُبْحَانَ اللَّهِ','الْحَمْدُ لِلَّهِ',
 
 function kd(d){return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()}
 function dkey(){return kd(new Date())}
-var KEY='azkar_app_v1',h=new Date().getHours();
+var KEY='azkar_app_v1',DV=2,h=new Date().getHours();
 var S={per:(h>=3&&h<14)?'m':'e',lang:'eg',day:dkey(),c:{m:{},e:{}},idx:{m:0,e:0},tab:'',list:false,review:false,
- fz:22,snd:true,auto:true,vb:true,wake:false,hist:{},tc:0,tt:33,tp:0,tot:0,pt:{},go:{},gd:{},page:'z',_sw:false};
+ fz:22,snd:true,auto:true,vb:true,wake:false,hist:{},tc:0,tt:33,tp:0,tot:0,pt:{},go:{},gd:{},ctp:[],cg:[],tpAdd:false,gAdd:false,page:'z',_sw:false};
 try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');if(sv){
- ['lang','tt','tp','tot','tc','fz','snd','auto','vb','wake','hist','pt','page'].forEach(function(k){if(sv[k]!==undefined)S[k]=sv[k]});
- if(sv.day===S.day){S.c=sv.c||S.c;S.go=sv.go||{};S.gd=sv.gd||{};S.idx=sv.idx||S.idx}}}catch(e){}
+ ['lang','tt','tp','tot','tc','fz','snd','auto','vb','wake','hist','pt','ctp','cg','page'].forEach(function(k){if(sv[k]!==undefined)S[k]=sv[k]});
+ if(sv.day===S.day){S.go=sv.go||{};S.gd=sv.gd||{};if(sv.dv===DV){S.c=sv.c||S.c;S.idx=sv.idx||S.idx}}}}catch(e){}
+if(!Array.isArray(S.ctp))S.ctp=[];if(!Array.isArray(S.cg))S.cg=[];
+if(typeof S.tp==='string'?!S.ctp.some(function(c){return 'c'+c.id===S.tp}):!(S.tp>=0&&S.tp<TP.length))S.tp=0;
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 var QP=new URLSearchParams(location.search);
 if(QP.get('p'))S.page=QP.get('p');if(QP.get('per'))S.per=QP.get('per');
-function save(){try{localStorage.setItem(KEY,JSON.stringify({lang:S.lang,day:S.day,c:S.c,idx:S.idx,tt:S.tt,tp:S.tp,tot:S.tot,tc:S.tc,pt:S.pt,go:S.go,gd:S.gd,fz:S.fz,snd:S.snd,auto:S.auto,vb:S.vb,wake:S.wake,hist:S.hist,page:S.page}))}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({dv:DV,ctp:S.ctp,cg:S.cg,lang:S.lang,day:S.day,c:S.c,idx:S.idx,tt:S.tt,tp:S.tp,tot:S.tot,tc:S.tc,pt:S.pt,go:S.go,gd:S.gd,fz:S.fz,snd:S.snd,auto:S.auto,vb:S.vb,wake:S.wake,hist:S.hist,page:S.page}))}catch(e){}}
 function checkDay(){var k=dkey();if(k!==S.day){S.day=k;S.c={m:{},e:{}};S.idx={m:0,e:0};S.go={};S.gd={};S.review=false;save();return true}return false}
 
 function list(){return D.map(function(d,i){return [d,i]}).filter(function(x){return x[0].t==='b'||x[0].t===S.per})}
@@ -259,6 +286,10 @@ var AC;function beep(f,d){if(!S.snd)return;try{AC=AC||new(window.AudioContext||w
 var WL=null;function applyWake(){try{if(S.wake&&!document.hidden&&'wakeLock' in navigator){if(!WL)navigator.wakeLock.request('screen').then(function(l){WL=l;l.addEventListener('release',function(){WL=null})}).catch(function(){})}else if(WL){WL.release();WL=null}}catch(e){}}
 function dayDone(k){return S.hist[k]&&(S.hist[k].m||S.hist[k].e)}
 function streak(){var n=0,d=new Date();if(!dayDone(kd(d)))d.setDate(d.getDate()-1);while(dayDone(kd(d))){n++;d.setDate(d.getDate()-1)}return n}
+function dCount(p){var n=0;for(var k in S.hist)if(S.hist[k]&&S.hist[k][p])n++;return n}
+function dWord(n){return n===1?'يوم':(n>=3&&n<=10)?'أيام':'يومًا'}
+function daysHTML(){return '<div class="grid2">'+[['m','☀️ أيام أذكار الصباح'],['e','🌙 أيام أذكار المساء']].map(function(x){var n=dCount(x[0]);
+ return '<div class="stat"'+(S.per===x[0]?' style="box-shadow:inset 0 0 0 2px var(--ac)"':'')+'><p class="lbl">'+x[1]+'</p><p style="font-size:24px;font-weight:700;margin:0">'+n.toLocaleString('ar-EG')+' <span style="font-size:14px;font-weight:500;color:var(--tx2)">'+dWord(n)+'</span></p></div>'}).join('')+'</div>'}
 function rStk(){var n=streak();document.getElementById('stk').textContent=n?'🔥 '+n+' '+(n===1?'يوم':n<=10?'أيام':'يومًا'):'🌱 ابدأ اليوم'}
 function confetti(el){var cs=['#0F6E56','#5DCAA5','#FAC775','#BA7517','#97C459','#F0997B'];for(var i=0;i<34;i++){var s=document.createElement('span');s.className='cf';s.style.left=Math.random()*100+'%';s.style.background=cs[i%cs.length];s.style.animationDelay=(Math.random()*.6)+'s';el.appendChild(s)}}
 
@@ -286,6 +317,7 @@ function rZ(anim,popIt){
  if(all&&!S.review){
   var st=streak();
   o+='<div class="card aU" id="fin" style="text-align:center;padding:30px 18px"><div style="width:84px;height:84px;border-radius:50%;background:var(--okbg);color:var(--ok);font-size:42px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px" class="pop">✓</div><p style="font-family:Amiri,serif;font-size:28px;margin:0 0 6px;color:var(--ac)">تقبّل الله منك</p><p style="color:var(--tx2);margin:0 0 6px">أتممت '+(S.per==='m'?'أذكار الصباح':'أذكار المساء')+' كاملة</p>'+(st?'<p style="color:var(--gd);font-weight:700;margin:0 0 18px">🔥 '+st+' '+(st===1?'يوم':'أيام')+' متتالية من المحافظة</p>':'<p style="margin:0 0 18px"></p>')+'<p style="font-family:Amiri,serif;font-size:19px;line-height:1.9;margin:0 0 18px">اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ</p><button class="btn pri" data-goto="g" style="width:100%;margin-bottom:10px">🤍 انتقل إلى عمل اليوم</button><div class="row"><button class="btn" data-review="1" style="flex:1">مراجعة الأذكار</button><button class="btn" data-reset="1" style="flex:1">↻ البدء من جديد</button></div></div>';
+  o+=daysHTML();
   document.getElementById('pz').innerHTML=o;if(anim)confetti(document.getElementById('fin'));return}
  if(S.list){o+='<div class="chips aU">'+L.map(function(x,j){var dn=rem(x[1])===0;return '<button data-j="'+j+'" class="'+(dn?'d ':'')+(j===k?'cur':'')+'">'+(dn?'✓':j+1)+'</button>'}).join('')+'</div>'}
  var C=2*Math.PI*48,p=(d.n-r)/d.n;
@@ -301,6 +333,7 @@ function rZ(anim,popIt){
  if(S.tab==='m')o+='<div class="box aU" style="background:var(--card);border:1px solid var(--line)"><div class="seg" style="padding:3px;margin-bottom:10px"><button data-lang="eg" class="'+(S.lang==='eg'?'on':'')+'" style="min-height:36px;font-size:14px">بالمصري</button><button data-lang="fs" class="'+(S.lang==='fs'?'on':'')+'" style="min-height:36px;font-size:14px">بالفصحى</button></div>'+d[S.lang]+'</div>';
  if(S.tab==='f')o+='<div class="box aU" style="background:var(--gdbg);color:var(--gd)">'+d.f+'</div>';
  if(S.tab==='s')o+='<div class="box aU" style="background:var(--soft)">'+d.s+'<br><a href="https://dorar.net" target="_blank" rel="noopener" style="color:var(--ac);font-size:14px">تحقّق من التخريج على الدرر السنية ↗</a></div>';
+ o+=daysHTML();
  o+='<p style="font-size:12.5px;color:var(--tx3);text-align:center;margin:18px 0 0;line-height:1.8">وقت أذكار الصباح من الفجر إلى طلوع الشمس، وأذكار المساء من العصر إلى الغروب، ويجوز قضاؤها بعد ذلك.</p>';
  document.getElementById('pz').innerHTML=o}
 
@@ -317,17 +350,25 @@ function tapCount(){
 
 function rT(pulse){
  var C=2*Math.PI*86,p=S.tt?Math.min(S.tc/S.tt,1):(S.tc%100)/100,ph=S.pt[S.tp]||0;
- var o='<label class="lbl" for="tp">اختر الذكر</label><select id="tp">'+TP.map(function(t,i){return '<option value="'+i+'"'+(i==S.tp?' selected':'')+'>'+t+'</option>'}).join('')+'</select>';
+ var isC=typeof S.tp==='string';
+ var o='<label class="lbl" for="tp">اختر الذكر</label><select id="tp" style="margin-bottom:6px">'+TP.map(function(t,i){return '<option value="'+i+'"'+(i===S.tp?' selected':'')+'>'+t+'</option>'}).join('')+
+  (S.ctp.length?'<optgroup label="أذكاري الخاصة">'+S.ctp.map(function(c){var v='c'+c.id;return '<option value="'+v+'"'+(v===S.tp?' selected':'')+'>'+esc(c.t)+'</option>'}).join('')+'</optgroup>':'')+'</select>';
+ if(S.tpAdd)o+='<div class="card aU" style="padding:14px;margin:8px 0 14px"><label class="lbl" for="tpi">اكتب الذكر اللي حابب تضيفه</label><textarea class="inp" id="tpi" rows="2" maxlength="200" placeholder="مثال: سبحان الله وبحمده سبحان الله العظيم"></textarea><div class="row"><button class="btn pri" data-tps="1" style="flex:1">حفظ الذكر</button><button class="btn" data-tpc="1" style="flex:1">إلغاء</button></div></div>';
+ else o+='<div class="row" style="justify-content:space-between;margin-bottom:12px"><button class="lnk" data-tpa="1" style="color:var(--ac);font-weight:700">＋ إضافة ذكر خاص</button>'+(isC?'<button class="lnk" data-tpd="1">🗑 حذف هذا الذكر</button>':'')+'</div>';
  o+='<div class="seg" style="margin-bottom:18px">'+[33,100,0].map(function(v){return '<button data-tt="'+v+'" class="'+(S.tt===v?'on':'')+'">'+(v?v:'مفتوح')+'</button>'}).join('')+'</div>';
- o+='<p class="zk" style="font-size:26px;margin:0 0 14px;cursor:default">'+TP[S.tp]+'</p>';
+ o+='<p class="zk" style="font-size:26px;margin:0 0 14px;cursor:default">'+tpText(S.tp)+'</p>';
  o+='<button class="tb'+(pulse?' pl':'')+'" id="tb" aria-label="سبّح"><svg width="260" height="260" viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" fill="var(--acbg)" stroke="var(--line)" stroke-width="8"/><circle cx="100" cy="100" r="86" fill="none" stroke="var(--ac)" stroke-width="8" stroke-linecap="round" stroke-dasharray="'+C.toFixed(2)+'" stroke-dashoffset="'+(C*(1-p)).toFixed(2)+'" transform="rotate(-90 100 100)" style="transition:stroke-dashoffset .2s"/></svg><span class="num"><span class="'+(pulse?'pop':'')+'" style="font-size:60px;font-weight:700;line-height:1;display:inline-block">'+S.tc+'</span><span style="font-size:15px;margin-top:8px">'+(S.tt?'من '+S.tt:'اضغط للتسبيح')+'</span></span></button>';
  if(S.tt&&S.tc>=S.tt)o+='<div class="msg aU" style="margin-top:16px">أتممت '+S.tt+'، بارك الله فيك</div>';
  o+='<div class="grid2"><div class="stat"><p class="lbl">مجموع هذا الذكر</p><p style="font-size:24px;font-weight:700;margin:0">'+ph.toLocaleString('ar-EG')+'</p></div><div class="stat"><p class="lbl">مجموع تسبيحك كله</p><p style="font-size:24px;font-weight:700;margin:0">'+S.tot.toLocaleString('ar-EG')+'</p></div></div>';
  o+='<button class="btn" id="tr" style="width:100%;margin-top:10px">↻ تصفير العدّاد</button>';
  document.getElementById('pt').innerHTML=o;
- document.getElementById('tp').onchange=function(e){S.tp=+e.target.value;S.tc=0;save();rT()};
+ document.getElementById('tp').onchange=function(e){var v=e.target.value;S.tp=v[0]==='c'?v:+v;S.tc=0;save();rT()};
  document.getElementById('tb').onclick=tasbih;
- document.getElementById('tr').onclick=function(){S.tc=0;save();rT()}}
+ document.getElementById('tr').onclick=function(){S.tc=0;save();rT()};
+ var ti=document.getElementById('tpi');if(ti){ti.focus();ti.onkeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();addTp()}}}}
+function tpText(v){if(typeof v!=='string')return TP[v]||TP[0];for(var q=0;q<S.ctp.length;q++)if('c'+S.ctp[q].id===v)return esc(S.ctp[q].t);return TP[0]}
+function addTp(){var el=document.getElementById('tpi'),t=el?el.value.replace(/\s+/g,' ').trim():'';if(!t){if(el)el.focus();return}
+ var id=Date.now();S.ctp.push({id:id,t:t});S.tp='c'+id;S.tc=0;S.tpAdd=false;save();vib(20);rT()}
 function tasbih(){S.tc++;S.tot++;S.pt[S.tp]=(S.pt[S.tp]||0)+1;
  if(S.tt&&S.tc===S.tt){vib([80,60,80]);beep(880,.2)}else{vib(12);beep(600,.06)}save();rT(true)}
 
@@ -335,10 +376,20 @@ function rG(anim){
  var day=Math.floor((Date.now()-new Date().getTimezoneOffset()*6e4)/864e5),keys=Object.keys(G),dc=0,cards='';
  keys.forEach(function(k,j){var a=G[k],ix=(day+j*3+(S.go[k]||0))%a.length,dn=S.gd[k+ix];if(dn)dc++;
   cards+='<div class="card'+(dn?' done':'')+(anim===k?' aN':'')+'"><div class="row" style="margin-bottom:10px"><span class="ic">'+GI[k]+'</span><span style="font-weight:700;font-size:16px">عمل '+k+'</span></div><p style="font-size:17px;line-height:1.85;margin:0 0 12px">'+a[ix]+'</p><div class="row"><button class="btn'+(dn?'':' pri')+'" data-gd="'+k+'|'+ix+'" style="flex:1">'+(dn?'✓ تم، تقبّل الله':'أنجزته')+'</button><button class="btn" data-go="'+k+'" style="flex:1">🔀 فكرة أخرى</button></div></div>'});
- var o='<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--tx2);margin-bottom:6px"><span>أعمال اليوم: '+dc+' من '+keys.length+'</span><span>'+Math.round(dc/keys.length*100)+'%</span></div><div class="bar"><div style="width:'+Math.round(dc/keys.length*100)+'%"></div></div>';
- if(dc===keys.length)o+='<div class="msg aU">ما شاء الله! أنجزت أعمال اليوم كلها، جعلها الله في ميزانك 🤍</div>';
+ var mine='<p class="lbl" style="margin:22px 0 10px">✍️ أعمالي الخاصة · تتكرر معك كل يوم</p>';
+ S.cg.forEach(function(c){var dn=S.gd['c'+c.id];if(dn)dc++;
+  mine+='<div class="card'+(dn?' done':'')+'"><div class="row" style="margin-bottom:10px"><span class="ic">✍️</span><span style="font-weight:700;font-size:16px;flex:1">عملي الخاص</span><button class="lnk" data-gx="'+c.id+'" aria-label="حذف العمل" style="font-size:17px;min-width:40px">🗑</button></div><p style="font-size:17px;line-height:1.85;margin:0 0 12px">'+esc(c.t)+'</p><button class="btn'+(dn?'':' pri')+'" data-gc="'+c.id+'" style="width:100%">'+(dn?'✓ تم، تقبّل الله':'أنجزته')+'</button></div>'});
+ if(S.gAdd)mine+='<div class="card aU" style="padding:14px"><label class="lbl" for="gi">اكتب العمل اللي حابب تعمله كل يوم</label><textarea class="inp" id="gi" rows="2" maxlength="200" placeholder="مثال: قراءة ورد من القرآن، صلاة الضحى…"></textarea><div class="row"><button class="btn pri" data-gs="1" style="flex:1">حفظ العمل</button><button class="btn" data-gcl="1" style="flex:1">إلغاء</button></div></div>';
+ else mine+='<button class="btn dash" data-ga="1">＋ أضف عملًا خاصًا</button>';
+ var tot=keys.length+S.cg.length,pc=Math.round(dc/tot*100);
+ var o='<div style="display:flex;justify-content:space-between;font-size:13px;color:var(--tx2);margin-bottom:6px"><span>أعمال اليوم: '+dc+' من '+tot+'</span><span>'+pc+'%</span></div><div class="bar"><div style="width:'+pc+'%"></div></div>';
+ cards+=mine;
+ if(dc===tot)o+='<div class="msg aU">ما شاء الله! أنجزت أعمال اليوم كلها، جعلها الله في ميزانك 🤍</div>';
  else o+='<p class="lbl" style="margin-bottom:12px">ثلاث أفكار بسيطة لليوم، اختر ما يناسبك وابدأ</p>';
- document.getElementById('pg').innerHTML=o+cards}
+ document.getElementById('pg').innerHTML=o+cards;
+ var gi=document.getElementById('gi');if(gi){gi.focus();gi.onkeydown=function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();addG()}}}}
+function addG(){var el=document.getElementById('gi'),t=el?el.value.replace(/\s+/g,' ').trim():'';if(!t){if(el)el.focus();return}
+ S.cg.push({id:Date.now(),t:t});S.gAdd=false;save();vib(20);rG()}
 
 var sheet=document.getElementById('sheet'),sbg=document.getElementById('sbg');
 function sheetOpen(){return sheet.classList.contains('on')}
@@ -353,7 +404,7 @@ function rS(){
  if(DP)o+='<button class="btn pri" data-install="1">📲 تثبيت التطبيق على الجهاز</button>';
  else if(isIOS&&!isStd)o+='<div class="inst" style="margin:0">📲 للتثبيت: زر المشاركة ⬆️ ثم «إضافة إلى الشاشة الرئيسية»</div>';
  if(navigator.share)o+='<button class="btn" data-share="1">💌 شارك التطبيق مع من تحب</button>';
- o+='</div><p style="font-size:12.5px;color:var(--tx3);text-align:center;line-height:1.9;margin:18px 0 0">مرجع تخريج الأذكار: <a href="https://dorar.net" target="_blank" rel="noopener" style="color:var(--ac)">الدرر السنية</a><br>أذكاري · الإصدار 1.0<br>لا تنسونا من صالح دعائكم 🤍</p>';
+ o+='</div><p style="font-size:12.5px;color:var(--tx3);text-align:center;line-height:1.9;margin:18px 0 0">مرجع تخريج الأذكار: <a href="https://dorar.net" target="_blank" rel="noopener" style="color:var(--ac)">الدرر السنية</a><br>أذكاري · الإصدار 1.1<br>لا تنسونا من صالح دعائكم 🤍</p>';
  sheet.innerHTML=o;
  document.getElementById('fz').oninput=function(e){S.fz=+e.target.value;document.documentElement.style.setProperty('--zk',S.fz+'px');document.getElementById('fzp').style.fontSize=S.fz+'px';save()}}
 function openSheet(){rS();sheet.classList.add('on');sbg.classList.add('on');try{history.pushState({s:1},'')}catch(e){}}
@@ -388,12 +439,22 @@ var sx=0,sy=0;
 pz.addEventListener('touchstart',function(e){if(!e.target.closest('#stage'))return;sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
 pz.addEventListener('touchend',function(e){if(!e.target.closest('#stage'))return;var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;
  if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5){S._sw=true;setTimeout(function(){S._sw=false},350);goIdx(dx>0?'n':'p')}});
-document.getElementById('pt').addEventListener('click',function(e){var b=e.target.closest('[data-tt]');if(b){S.tt=+b.dataset.tt;S.tc=0;save();rT()}});
+document.getElementById('pt').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var ds=b.dataset;
+ if(ds.tt!==undefined){S.tt=+ds.tt;S.tc=0;save();rT();return}
+ if(ds.tpa){S.tpAdd=true;rT();return}
+ if(ds.tpc){S.tpAdd=false;rT();return}
+ if(ds.tps){addTp();return}
+ if(ds.tpd&&typeof S.tp==='string'&&confirm('حذف هذا الذكر من قائمتك؟')){var v=S.tp;S.ctp=S.ctp.filter(function(c){return 'c'+c.id!==v});delete S.pt[v];S.tp=0;S.tc=0;save();rT()}});
 document.getElementById('pg').onclick=function(e){var b=e.target.closest('button');if(!b)return;refreshDay();
  if(b.dataset.go){var k=b.dataset.go;S.go[k]=(S.go[k]||0)+1;save();rG(k)}
- if(b.dataset.gd){var p=b.dataset.gd.split('|'),key=p[0]+p[1];S.gd[key]=!S.gd[key];if(S.gd[key]){vib(30);beep(784,.15)}save();rG()}};
+ if(b.dataset.gd){var p=b.dataset.gd.split('|'),key=p[0]+p[1];S.gd[key]=!S.gd[key];if(S.gd[key]){vib(30);beep(784,.15)}save();rG()}
+ if(b.dataset.gc){var ck='c'+b.dataset.gc;S.gd[ck]=!S.gd[ck];if(S.gd[ck]){vib(30);beep(784,.15)}save();rG()}
+ if(b.dataset.gx&&confirm('حذف هذا العمل من أعمالك الخاصة؟')){var gid=+b.dataset.gx;S.cg=S.cg.filter(function(c){return c.id!==gid});delete S.gd['c'+gid];save();rG()}
+ if(b.dataset.ga){S.gAdd=true;rG()}
+ if(b.dataset.gcl){S.gAdd=false;rG()}
+ if(b.dataset.gs)addG()};
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeSheet();return}
- if(sheetOpen()||e.target.tagName==='SELECT'||e.target.tagName==='INPUT')return;
+ if(sheetOpen()||/^(SELECT|INPUT|TEXTAREA)$/.test(e.target.tagName))return;
  if(S.page==='z'){if(e.key==='ArrowLeft'){goIdx('n');e.preventDefault()}else if(e.key==='ArrowRight'){goIdx('p');e.preventDefault()}else if(e.key===' '){tapCount();e.preventDefault()}}
  else if(S.page==='t'&&e.key===' '){tasbih();e.preventDefault()}});
 document.addEventListener('visibilitychange',function(){if(!document.hidden)refreshDay();applyWake()});
@@ -407,4 +468,4 @@ if(QP.get('p')){try{history.replaceState(null,'',location.pathname)}catch(e){}}
 setTimeout(function(){var s=document.getElementById('splash');s.classList.add('hide');setTimeout(function(){s.remove()},500)},700);
 </script>
 </body>
-</html>
+</html>
