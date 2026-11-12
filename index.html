@@ -404,7 +404,7 @@ function rS(){
  if(DP)o+='<button class="btn pri" data-install="1">📲 تثبيت التطبيق على الجهاز</button>';
  else if(isIOS&&!isStd)o+='<div class="inst" style="margin:0">📲 للتثبيت: زر المشاركة ⬆️ ثم «إضافة إلى الشاشة الرئيسية»</div>';
  if(navigator.share)o+='<button class="btn" data-share="1">💌 شارك التطبيق مع من تحب</button>';
- o+='</div><p style="font-size:12.5px;color:var(--tx3);text-align:center;line-height:1.9;margin:18px 0 0">مرجع تخريج الأذكار: <a href="https://dorar.net" target="_blank" rel="noopener" style="color:var(--ac)">الدرر السنية</a><br>أذكاري · الإصدار 1.1<br>لا تنسونا من صالح دعائكم 🤍</p>';
+ o+='</div><p style="font-size:12.5px;color:var(--tx3);text-align:center;line-height:1.9;margin:18px 0 0">مرجع تخريج الأذكار: <a href="https://dorar.net" target="_blank" rel="noopener" style="color:var(--ac)">الدرر السنية</a><br>أذكاري · الإصدار 1.2<br>لا تنسونا من صالح دعائكم 🤍</p>';
  sheet.innerHTML=o;
  document.getElementById('fz').oninput=function(e){S.fz=+e.target.value;document.documentElement.style.setProperty('--zk',S.fz+'px');document.getElementById('fzp').style.fontSize=S.fz+'px';save()}}
 function openSheet(){rS();sheet.classList.add('on');sbg.classList.add('on');try{history.pushState({s:1},'')}catch(e){}}
@@ -460,7 +460,9 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeSheet(
 document.addEventListener('visibilitychange',function(){if(!document.hidden)refreshDay();applyWake()});
 
 if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')){
- window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}
+ var hadSW=!!navigator.serviceWorker.controller,swReload=false;
+ navigator.serviceWorker.addEventListener('controllerchange',function(){if(hadSW&&!swReload){swReload=true;location.reload()}});
+ window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(function(r){r.update()}).catch(function(){})})}
 
 document.getElementById('today').textContent=new Date().toLocaleDateString('ar-SA-u-ca-islamic-umalqura',{weekday:'long',day:'numeric',month:'long'});
 rStk();rZ('n');rT();rG();rInst();show(S.page);applyWake();
