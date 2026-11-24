@@ -2,16 +2,25 @@
 // Runs every 15 minutes from .github/workflows/reminders.yml.
 // Only users who signed in and allowed notifications are reminded, and only
 // while the reminder window is open and that period isn't finished yet.
-import admin from 'firebase-admin';
+import { initializeApp, cert } from 'firebase-admin/app';
+import { getFirestore } from 'firebase-admin/firestore';
+import { getMessaging } from 'firebase-admin/messaging';
 
 const sa = process.env.FIREBASE_SERVICE_ACCOUNT;
 if (!sa) {
   console.log('FIREBASE_SERVICE_ACCOUNT secret is not set yet; nothing to do.');
   process.exit(0);
 }
-admin.initializeApp({ credential: admin.credential.cert(JSON.parse(sa)) });
-const db = admin.firestore();
-const fcm = admin.messaging();
+let account;
+try {
+  account = JSON.parse(sa);
+} catch {
+  console.error('FIREBASE_SERVICE_ACCOUNT is not valid JSON. Paste the whole service-account .json file into the secret.');
+  process.exit(1);
+}
+initializeApp({ credential: cert(account) });
+const db = getFirestore();
+const fcm = getMessaging();
 
 const RM = {
   m: { title: '☀️ وقت أذكار الصباح', body: 'ابدأ يومك بذكر الله، أذكار الصباح في انتظارك', url: './?p=z&per=m' },
