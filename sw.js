@@ -1,4 +1,4 @@
-const V = 'zakeroon-v6';
+const V = 'zakeroon-v7';
 const SHELL = ['./', './index.html', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
@@ -47,5 +47,16 @@ self.addEventListener('notificationclick', e => {
     const c = cs.find(w => w.url.startsWith(self.registration.scope));
     if (c) return c.focus().then(w => (w || c).navigate(url)).catch(() => self.clients.openWindow(url));
     return self.clients.openWindow(url);
+  }));
+});
+
+// Reminder sent from the server (GitHub Actions -> Firebase Cloud Messaging) while the app is closed
+self.addEventListener('push', e => {
+  let p = {};
+  try { p = e.data ? e.data.json() : {}; } catch (_) {}
+  const d = p.data || p;
+  e.waitUntil(self.registration.showNotification(d.title || 'ذاكرون', {
+    body: d.body || '', icon: 'icon-192.png', badge: 'icon-192.png',
+    tag: d.tag || 'zk', lang: 'ar', dir: 'rtl', data: { url: d.url || './' }
   }));
 });

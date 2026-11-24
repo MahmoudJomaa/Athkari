@@ -1,0 +1,29 @@
+name: Send reminders
+
+on:
+  schedule:
+    # Every 15 minutes (off the hour, when GitHub is less busy)
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: reminders
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install firebase-admin
+        working-directory: scripts
+        run: npm install --no-save --no-audit --no-fund firebase-admin@14.5.0
+      - name: Send
+        working-directory: scripts
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: node send-reminders.mjs
