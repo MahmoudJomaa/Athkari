@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>صانع أيقونات أذكاري</title>
+<title>صانع أيقونات ذاكرون</title>
 <style>
 body{font-family:system-ui,sans-serif;background:#F6F3EC;color:#2A2A27;max-width:560px;margin:0 auto;padding:28px 18px;text-align:center;line-height:1.8}
 .pv{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:20px 0}
@@ -14,7 +14,7 @@ button{background:#0F6E56;color:#fff;border:none;border-radius:12px;min-height:5
 </style>
 </head>
 <body>
-<h2>أيقونات تطبيق أذكاري</h2>
+<h2>أيقونات تطبيق ذاكرون</h2>
 <p>اضغط الزر لتنزيل الأيقونات الأربع، ثم انقلها إلى مجلد التطبيق بجوار <b>index.html</b>.<br>إذا سأل المتصفح عن السماح بتنزيل عدة ملفات فاختر «السماح».</p>
 <div class="pv" id="pv"></div>
 <button id="all">⬇️ تنزيل كل الأيقونات</button>
@@ -31,4 +31,4 @@ FILES.forEach(function(f){url(f).then(function(u){var d=document.createElement('
 document.getElementById('all').onclick=function(){FILES.reduce(function(p,f){return p.then(function(){return dl(f)}).then(function(){return new Promise(function(r){setTimeout(r,400)})})},Promise.resolve())};
 </script>
 </body>
-</html>
+</html>

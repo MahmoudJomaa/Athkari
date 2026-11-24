@@ -1,4 +1,4 @@
-const V = 'athkari-v4';
+const V = 'zakeroon-v5';
 const SHELL = ['./', './index.html', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
@@ -36,5 +36,16 @@ self.addEventListener('fetch', e => {
       return res;
     }).catch(() => hit);
     return hit || net;
+  }));
+});
+
+// Tapping a reminder notification opens (or focuses) the app on the right page
+self.addEventListener('notificationclick', e => {
+  e.notification.close();
+  const url = new URL((e.notification.data && e.notification.data.url) || './', self.registration.scope).href;
+  e.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(cs => {
+    const c = cs.find(w => w.url.startsWith(self.registration.scope));
+    if (c) return c.focus().then(w => (w || c).navigate(url)).catch(() => self.clients.openWindow(url));
+    return self.clients.openWindow(url);
   }));
 });
