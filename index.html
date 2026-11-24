@@ -505,7 +505,7 @@ function rS(){
  if(DP)o+='<button class="btn pri" data-install="1">📲 تثبيت التطبيق على الجهاز</button>';
  else if(im)o+='<div class="inst" style="margin:0;flex-wrap:wrap"><span style="flex:1;min-width:200px">📲 '+im[0]+'</span>'+im[1]+'</div>';
  o+='<button class="btn" data-share="1">📤 مشاركة لصديق'+(S.shares?' · شاركته مع '+friends(S.shares):'')+'</button>';
- o+='</div><p style="font-size:12.5px;color:var(--tx3);text-align:center;line-height:1.9;margin:18px 0 0">مرجع تخريج الأذكار: <a href="https://dorar.net" target="_blank" rel="noopener" style="color:var(--ac)">الدرر السنية</a><br>ذاكرون · Zakeroon · الإصدار 2.2<br>لا تنسونا من صالح دعائكم 🤍</p>';
+ o+='</div><p style="font-size:12.5px;color:var(--tx3);text-align:center;line-height:1.9;margin:18px 0 0">مرجع تخريج الأذكار: <a href="https://dorar.net" target="_blank" rel="noopener" style="color:var(--ac)">الدرر السنية</a><br>ذاكرون · Zakeroon · الإصدار 2.3<br>لا تنسونا من صالح دعائكم 🤍</p>';
  sheet.innerHTML=o;
  document.getElementById('fz').oninput=function(e){S.fz=+e.target.value;document.documentElement.style.setProperty('--zk',S.fz+'px');document.getElementById('fzp').style.fontSize=S.fz+'px';save()}}
 function openSheet(){rS();sheet.classList.add('on');sbg.classList.add('on');try{history.pushState({s:1},'')}catch(e){}}
@@ -589,7 +589,7 @@ import {getAuth,GoogleAuthProvider,signInWithPopup,signInWithRedirect,getRedirec
 import {getFirestore,doc,getDoc,setDoc,serverTimestamp,arrayUnion,arrayRemove} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
 import {getMessaging,getToken,deleteToken,isSupported} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-messaging.js';
 // Public Web Push key from Firebase > Project settings > Cloud Messaging (safe to publish)
-const VAPID='';
+const VAPID='BA0VS-uMQtZU-MTFBpwa0JfJ6gbI1VKcHRMu87L6C4WIAyl4R8Mj8_nXw96__hPPyc_sO_HJC_0SnPrTM_Zpmjw';
 const app=initializeApp({apiKey:'AIzaSyCR2EybypfCHIjf733fHMqeEcFC0CyM5_I',authDomain:'zakeroon.firebaseapp.com',projectId:'zakeroon',storageBucket:'zakeroon.firebasestorage.app',messagingSenderId:'433203446193',appId:'1:433203446193:web:aea377e4c0db9cb929fd90'});
 const auth=getAuth(app),db=getFirestore(app);auth.languageCode='ar';
 let timer=null,ready=false,hello=false;

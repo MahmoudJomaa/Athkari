@@ -1,4 +1,4 @@
-const V = 'zakeroon-v7';
+const V = 'zakeroon-v8';
 const SHELL = ['./', './index.html', './manifest.json', './icon.svg', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
