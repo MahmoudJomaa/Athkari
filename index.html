@@ -275,9 +275,9 @@ function dkey(){return kd(new Date())}
 var KEY='azkar_app_v1',DV=2,h=new Date().getHours();
 var S={per:(h>=3&&h<14)?'m':'e',lang:'eg',day:dkey(),c:{m:{},e:{}},idx:{m:0,e:0},tab:'',list:false,review:false,
  fz:22,snd:true,auto:true,vb:true,wake:false,hist:{},tc:0,tt:33,tp:0,tot:0,pt:{},go:{},gd:{},ctp:[],cg:[],tpAdd:false,gAdd:false,page:'z',_sw:false,
- shares:0,rm:{m:true,e:true,t:true},rt:{m:'06:00',e:'15:30',t:'13:00'},rx:{},nf:{},tDay:0};
+ shares:0,rm:{m:true,e:true,t:true},rt:{m:'06:00',e:'15:30',t:'13:00'},rx:{},nf:{},tDay:0,del:[]};
 try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');if(sv){
- ['lang','tt','tp','tot','tc','fz','snd','auto','vb','wake','hist','pt','ctp','cg','page','shares'].forEach(function(k){if(sv[k]!==undefined)S[k]=sv[k]});
+ ['lang','tt','tp','tot','tc','fz','snd','auto','vb','wake','hist','pt','ctp','cg','page','shares','del'].forEach(function(k){if(sv[k]!==undefined)S[k]=sv[k]});
  ['rm','rt'].forEach(function(k){if(sv[k]&&typeof sv[k]==='object')for(var q in S[k])if(sv[k][q]!==undefined)S[k][q]=sv[k][q]});
  if(sv.day===S.day){S.go=sv.go||{};S.gd=sv.gd||{};S.rx=sv.rx||{};S.nf=sv.nf||{};S.tDay=sv.tDay||0;if(sv.dv===DV){S.c=sv.c||S.c;S.idx=sv.idx||S.idx}}}}catch(e){}
 if(!Array.isArray(S.ctp))S.ctp=[];if(!Array.isArray(S.cg))S.cg=[];
@@ -285,7 +285,7 @@ if(typeof S.tp==='string'?!S.ctp.some(function(c){return 'c'+c.id===S.tp}):!(S.t
 function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
 var QP=new URLSearchParams(location.search);
 if(QP.get('p'))S.page=QP.get('p');if(QP.get('per'))S.per=QP.get('per');
-function save(){try{localStorage.setItem(KEY,JSON.stringify({shares:S.shares,rm:S.rm,rt:S.rt,rx:S.rx,nf:S.nf,tDay:S.tDay,dv:DV,ctp:S.ctp,cg:S.cg,lang:S.lang,day:S.day,c:S.c,idx:S.idx,tt:S.tt,tp:S.tp,tot:S.tot,tc:S.tc,pt:S.pt,go:S.go,gd:S.gd,fz:S.fz,snd:S.snd,auto:S.auto,vb:S.vb,wake:S.wake,hist:S.hist,page:S.page}))}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({del:S.del,shares:S.shares,rm:S.rm,rt:S.rt,rx:S.rx,nf:S.nf,tDay:S.tDay,dv:DV,ctp:S.ctp,cg:S.cg,lang:S.lang,day:S.day,c:S.c,idx:S.idx,tt:S.tt,tp:S.tp,tot:S.tot,tc:S.tc,pt:S.pt,go:S.go,gd:S.gd,fz:S.fz,snd:S.snd,auto:S.auto,vb:S.vb,wake:S.wake,hist:S.hist,page:S.page}))}catch(e){}if(window.ZK)ZK.queue()}
 function checkDay(){var k=dkey();if(k!==S.day){S.day=k;S.c={m:{},e:{}};S.idx={m:0,e:0};S.go={};S.gd={};S.rx={};S.nf={};S.tDay=0;S.review=false;save();return true}return false}
 
 function list(){return D.map(function(d,i){return [d,i]}).filter(function(x){return x[0].t==='b'||x[0].t===S.per})}
@@ -339,7 +339,7 @@ function rZ(anim,popIt){
  if(all&&!S.review){
   var st=streak();
   o+='<div class="card aU" id="fin" style="text-align:center;padding:30px 18px"><div style="width:84px;height:84px;border-radius:50%;background:var(--okbg);color:var(--ok);font-size:42px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px" class="pop">✓</div><p style="font-family:Amiri,serif;font-size:28px;margin:0 0 6px;color:var(--ac)">تقبّل الله منك</p><p style="color:var(--tx2);margin:0 0 6px">أتممت '+(S.per==='m'?'أذكار الصباح':'أذكار المساء')+' كاملة</p>'+(st?'<p style="color:var(--gd);font-weight:700;margin:0 0 18px">🔥 '+st+' '+(st===1?'يوم':'أيام')+' متتالية من المحافظة</p>':'<p style="margin:0 0 18px"></p>')+'<p style="font-family:Amiri,serif;font-size:19px;line-height:1.9;margin:0 0 18px">اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ</p><button class="btn pri" data-goto="g" style="width:100%;margin-bottom:10px">🤍 انتقل إلى عمل اليوم</button><button class="btn" data-share="1" style="width:100%;margin-bottom:10px;border-color:var(--gd);color:var(--gd)">📤 شارك ذاكرون مع صديق</button><div class="row"><button class="btn" data-review="1" style="flex:1">مراجعة الأذكار</button><button class="btn" data-reset="1" style="flex:1">↻ البدء من جديد</button></div></div>';
-  o+=daysHTML();
+  o+=daysHTML()+loginLink();
   document.getElementById('pz').innerHTML=o;if(anim)confetti(document.getElementById('fin'));return}
  if(S.list){o+='<div class="chips aU">'+L.map(function(x,j){var dn=rem(x[1])===0;return '<button data-j="'+j+'" class="'+(dn?'d ':'')+(j===k?'cur':'')+'">'+(dn?'✓':j+1)+'</button>'}).join('')+'</div>'}
  var C=2*Math.PI*48,p=(d.n-r)/d.n;
@@ -356,7 +356,7 @@ function rZ(anim,popIt){
  if(S.tab==='f')o+='<div class="box aU" style="background:var(--gdbg);color:var(--gd)">'+d.f+'</div>';
  if(S.tab==='s')o+='<div class="box aU" style="background:var(--soft)">'+d.s+'<br><a href="https://dorar.net" target="_blank" rel="noopener" style="color:var(--ac);font-size:14px">تحقّق من التخريج على الدرر السنية ↗</a></div>';
  o+='<div style="text-align:center;margin-top:14px"><button class="lnk" data-markall="1" style="color:var(--ac)">✓ قريت '+(S.per==='m'?'أذكار الصباح':'أذكار المساء')+' من مصدر تاني؟ علّمها كمنتهية</button></div>';
- o+=daysHTML();
+ o+=daysHTML()+loginLink();
  o+='<p style="font-size:12.5px;color:var(--tx3);text-align:center;margin:18px 0 0;line-height:1.8">وقت أذكار الصباح من الفجر إلى طلوع الشمس، وأذكار المساء من العصر إلى الغروب، ويجوز قضاؤها بعد ذلك.</p>';
  document.getElementById('pz').innerHTML=o}
 
@@ -467,6 +467,28 @@ function remRows(){
 function finishPer(){var L=list();L.forEach(function(x){S.c[S.per][x[1]]=0});S.review=false;S.hist[S.day]=S.hist[S.day]||{};S.hist[S.day][S.per]=true;
  save();rStk();rRem();vib([50,40,50]);beep(523,.12);setTimeout(function(){beep(784,.25)},130);rZ(true)}
 
+// ===== Google account (the Firebase part lives in the module script below) =====
+function doLogin(){if(!window.ZK){toast('محتاج اتصال بالإنترنت عشان تسجّل الدخول');return}ZK.signIn()}
+function loginLink(){return window.ZKU?'':'<div style="text-align:center;margin-top:10px"><button class="lnk" data-login="1" style="color:var(--ac)">☁️ احفظ إحصائياتك على حساب جوجل</button></div>'}
+function acctHTML(){var u=window.ZKU;
+ if(!u)return '<div class="card" style="margin:12px 0 6px;padding:14px;background:var(--acbg);border-color:transparent"><div style="font-weight:700;color:var(--ac)">☁️ احفظ إحصائياتك على حسابك</div><p class="note" style="margin:4px 0 12px">سجّل دخول بجوجل عشان أيام الأذكار والتسبيح والمشاركات تتحفظ، وتلاقيها لو غيّرت الموبايل.</p><button class="btn pri" data-login="1" style="width:100%">الدخول بحساب جوجل</button></div>';
+ var av=u.photo?'<img src="'+esc(u.photo)+'" alt="" referrerpolicy="no-referrer" style="width:44px;height:44px;border-radius:50%;flex-shrink:0">':'<span class="ic" style="width:44px;height:44px">'+esc((u.name||'?').charAt(0))+'</span>';
+ return '<div class="card" style="margin:12px 0 6px;padding:14px"><div class="row">'+av+'<div style="flex:1;min-width:0"><div style="font-weight:700">'+esc(u.name||'')+'</div><div style="font-size:13px;color:var(--tx3);overflow:hidden;text-overflow:ellipsis">'+esc(u.email||'')+'</div></div><button class="lnk" data-logout="1">خروج</button></div><p class="note" style="margin:10px 0 0;color:'+(u.err?'var(--gd)':'var(--ok)')+'">'+(u.err?'⚠️ '+u.err:'✓ إحصائياتك بتتحفظ على حسابك تلقائيًا')+'</p></div>'}
+// What gets saved to the account
+function exportData(){var h={};for(var k in S.hist){var x=S.hist[k]||{};if(x.m||x.e)h[k]={m:!!x.m,e:!!x.e}}
+ return {hist:h,tot:S.tot||0,pt:S.pt,shares:S.shares||0,ctp:S.ctp,cg:S.cg,del:S.del.slice(-200),rm:S.rm,rt:S.rt}}
+// Combine account data with this device: days are joined, counters keep the larger number
+function mergeRemote(r){if(!r||typeof r!=='object')return;
+ if(Array.isArray(r.del))r.del.forEach(function(id){if(S.del.indexOf(id)<0)S.del.push(id)});
+ if(r.hist)for(var k in r.hist){var a=S.hist[k]||{},b=r.hist[k]||{};S.hist[k]={m:!!(a.m||b.m),e:!!(a.e||b.e)}}
+ S.tot=Math.max(S.tot||0,+r.tot||0);S.shares=Math.max(S.shares||0,+r.shares||0);
+ if(r.pt)for(var q in r.pt)S.pt[q]=Math.max(S.pt[q]||0,+r.pt[q]||0);
+ ['ctp','cg'].forEach(function(k){if(Array.isArray(r[k]))r[k].forEach(function(x){if(x&&x.id&&S.del.indexOf(x.id)<0&&!S[k].some(function(y){return y.id===x.id}))S[k].push({id:x.id,t:String(x.t||'').slice(0,200)})});
+  S[k]=S[k].filter(function(x){return S.del.indexOf(x.id)<0})});
+ if(typeof S.tp==='string'&&!S.ctp.some(function(c){return 'c'+c.id===S.tp}))S.tp=0;
+ ['rm','rt'].forEach(function(k){if(r[k]&&typeof r[k]==='object')for(var q in S[k])if(r[k][q]!==undefined)S[k][q]=r[k][q]})}
+function acctRefresh(){rZ();rT();rG();rStk();schedRem();rRem();if(sheetOpen())rS()}
+
 var sheet=document.getElementById('sheet'),sbg=document.getElementById('sbg');
 function sheetOpen(){return sheet.classList.contains('on')}
 function tgRow(lbl,key,sub){return '<div class="srow"><div><div>'+lbl+'</div>'+(sub?'<div style="font-size:12px;color:var(--tx3)">'+sub+'</div>':'')+'</div><button class="tg'+(S[key]?' on':'')+'" data-tg="'+key+'" aria-label="'+lbl+'"></button></div>'}
@@ -474,6 +496,7 @@ function rS(){
  var o='<div class="grab"></div><div class="row" style="justify-content:space-between;margin-bottom:6px"><h2 style="margin:0;font-size:20px">الإعدادات</h2><button class="icb" data-close="1" aria-label="إغلاق">✕</button></div>';
  o+='<div class="srow"><span>حجم خط الأذكار</span><input type="range" min="18" max="34" step="1" value="'+S.fz+'" id="fz" aria-label="حجم الخط"></div>';
  o+='<p id="fzp" style="font-family:Amiri,serif;font-size:'+S.fz+'px;text-align:center;margin:10px 0;color:var(--ac)">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ</p>';
+ o+=acctHTML();
  o+=tgRow('صوت عند العدّ','snd')+tgRow('الاهتزاز','vb','على أجهزة أندرويد')+tgRow('الانتقال التلقائي للذكر التالي','auto');
  if('wakeLock' in navigator)o+=tgRow('إبقاء الشاشة مضاءة','wake','أثناء استخدام التطبيق');
  o+=remRows();
@@ -482,7 +505,7 @@ function rS(){
  if(DP)o+='<button class="btn pri" data-install="1">📲 تثبيت التطبيق على الجهاز</button>';
  else if(im)o+='<div class="inst" style="margin:0;flex-wrap:wrap"><span style="flex:1;min-width:200px">📲 '+im[0]+'</span>'+im[1]+'</div>';
  o+='<button class="btn" data-share="1">📤 مشاركة لصديق'+(S.shares?' · شاركته مع '+friends(S.shares):'')+'</button>';
- o+='</div><p style="font-size:12.5px;color:var(--tx3);text-align:center;line-height:1.9;margin:18px 0 0">مرجع تخريج الأذكار: <a href="https://dorar.net" target="_blank" rel="noopener" style="color:var(--ac)">الدرر السنية</a><br>ذاكرون · Zakeroon · الإصدار 2.0<br>لا تنسونا من صالح دعائكم 🤍</p>';
+ o+='</div><p style="font-size:12.5px;color:var(--tx3);text-align:center;line-height:1.9;margin:18px 0 0">مرجع تخريج الأذكار: <a href="https://dorar.net" target="_blank" rel="noopener" style="color:var(--ac)">الدرر السنية</a><br>ذاكرون · Zakeroon · الإصدار 2.1<br>لا تنسونا من صالح دعائكم 🤍</p>';
  sheet.innerHTML=o;
  document.getElementById('fz').oninput=function(e){S.fz=+e.target.value;document.documentElement.style.setProperty('--zk',S.fz+'px');document.getElementById('fzp').style.fontSize=S.fz+'px';save()}}
 function openSheet(){rS();sheet.classList.add('on');sbg.classList.add('on');try{history.pushState({s:1},'')}catch(e){}}
@@ -491,6 +514,8 @@ window.addEventListener('popstate',function(){closeSheet(true)});
 document.getElementById('setb').onclick=openSheet;sbg.onclick=function(){closeSheet()};
 sheet.onclick=function(e){var b=e.target.closest('button');if(!b)return;var ds=b.dataset;
  if(ds.close){closeSheet();return}
+ if(ds.login){doLogin();return}
+ if(ds.logout){if(confirm('تسجيل الخروج؟ إحصائياتك هتفضل محفوظة على حسابك وعلى الموبايل ده.'))window.ZK&&ZK.signOut();return}
  if(ds.tg){S[ds.tg]=!S[ds.tg];save();if(ds.tg==='wake')applyWake();if(ds.tg==='vb'&&S.vb)vib(30);if(ds.tg==='snd'&&S.snd)beep(700,.1);rS();return}
  if(ds.install){doInstall();return}
  if(ds.rm){var k=ds.rm;S.rm[k]=!S.rm[k];save();if(S.rm[k])askNotify();schedRem();rRem();rS();return}
@@ -518,6 +543,7 @@ pz.onclick=function(e){if(S._sw)return;var b=e.target.closest('[data-tap],button
  if(ds.review){S.review=true;S.idx[S.per]=0;rZ('n');return}
  if(ds.goto){show(ds.goto);return}
  if(ds.share){shareApp();return}
+ if(ds.login){doLogin();return}
  if(ds.markall){if(confirm('تعليم '+(S.per==='m'?'أذكار الصباح':'أذكار المساء')+' كمنتهية النهارده؟'))finishPer();return}
  if(ds.reset){if(confirm('إعادة كل عدّادات '+(S.per==='m'?'الصباح':'المساء')+'؟')){S.c[S.per]={};S.idx[S.per]=0;S.review=false;save();rZ('n')}return}};
 var sx=0,sy=0;
@@ -529,12 +555,12 @@ document.getElementById('pt').addEventListener('click',function(e){var b=e.targe
  if(ds.tpa){S.tpAdd=true;rT();return}
  if(ds.tpc){S.tpAdd=false;rT();return}
  if(ds.tps){addTp();return}
- if(ds.tpd&&typeof S.tp==='string'&&confirm('حذف هذا الذكر من قائمتك؟')){var v=S.tp;S.ctp=S.ctp.filter(function(c){return 'c'+c.id!==v});delete S.pt[v];S.tp=0;S.tc=0;save();rT()}});
+ if(ds.tpd&&typeof S.tp==='string'&&confirm('حذف هذا الذكر من قائمتك؟')){var v=S.tp;S.del.push(+v.slice(1));S.ctp=S.ctp.filter(function(c){return 'c'+c.id!==v});delete S.pt[v];S.tp=0;S.tc=0;save();rT()}});
 document.getElementById('pg').onclick=function(e){var b=e.target.closest('button');if(!b)return;refreshDay();
  if(b.dataset.go){var k=b.dataset.go;S.go[k]=(S.go[k]||0)+1;save();rG(k)}
  if(b.dataset.gd){var p=b.dataset.gd.split('|'),key=p[0]+p[1];S.gd[key]=!S.gd[key];if(S.gd[key]){vib(30);beep(784,.15)}save();rG()}
  if(b.dataset.gc){var ck='c'+b.dataset.gc;S.gd[ck]=!S.gd[ck];if(S.gd[ck]){vib(30);beep(784,.15)}save();rG()}
- if(b.dataset.gx&&confirm('حذف هذا العمل من أعمالك الخاصة؟')){var gid=+b.dataset.gx;S.cg=S.cg.filter(function(c){return c.id!==gid});delete S.gd['c'+gid];save();rG()}
+ if(b.dataset.gx&&confirm('حذف هذا العمل من أعمالك الخاصة؟')){var gid=+b.dataset.gx;S.del.push(gid);S.cg=S.cg.filter(function(c){return c.id!==gid});delete S.gd['c'+gid];save();rG()}
  if(b.dataset.ga){S.gAdd=true;rG()}
  if(b.dataset.gcl){S.gAdd=false;rG()}
  if(b.dataset.gs)addG();
@@ -555,6 +581,40 @@ rStk();rZ('n');rT();rG();rInst();rRem();schedRem();show(S.page);applyWake();
 setInterval(refreshDay,60000);
 if(QP.get('p')){try{history.replaceState(null,'',location.pathname)}catch(e){}}
 setTimeout(function(){var s=document.getElementById('splash');s.classList.add('hide');setTimeout(function(){s.remove()},500)},700);
+</script>
+<script type="module">
+// Google sign-in + saving stats to Firestore (users/{uid}). Loaded separately so the app still works offline without it.
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js';
+import {getAuth,GoogleAuthProvider,signInWithPopup,signInWithRedirect,getRedirectResult,onAuthStateChanged,signOut} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
+import {getFirestore,doc,getDoc,setDoc,serverTimestamp} from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
+const app=initializeApp({apiKey:'AIzaSyCR2EybypfCHIjf733fHMqeEcFC0CyM5_I',authDomain:'zakeroon.firebaseapp.com',projectId:'zakeroon',storageBucket:'zakeroon.firebasestorage.app',messagingSenderId:'433203446193',appId:'1:433203446193:web:aea377e4c0db9cb929fd90'});
+const auth=getAuth(app),db=getFirestore(app);auth.languageCode='ar';
+let timer=null,ready=false,hello=false;
+const ref=u=>doc(db,'users',u.uid);
+function setUser(u,err){window.ZKU=u?{name:u.displayName||'',email:u.email||'',photo:u.photoURL||'',err:err||''}:null}
+function fail(e){console.warn('zakeroon sync',e);const u=auth.currentUser;if(!u)return;
+ setUser(u,navigator.onLine?'لم نتمكن من حفظ إحصائياتك على الحساب حاليًا':'مفيش إنترنت، هنحفظ أول ما يرجع');if(sheetOpen())rS()}
+async function pull(){const u=auth.currentUser;if(!u)return;const snap=await getDoc(ref(u));if(snap.exists())mergeRemote(snap.data().d);ready=true}
+async function push(){clearTimeout(timer);timer=null;const u=auth.currentUser;if(!u||!ready)return;
+ await setDoc(ref(u),{name:u.displayName||'',d:exportData(),tz:Intl.DateTimeFormat().resolvedOptions().timeZone||'',updated:serverTimestamp()},{merge:true});
+ if(window.ZKU&&window.ZKU.err){setUser(u);if(sheetOpen())rS()}}
+async function sync(){try{await pull();save();await push();setUser(auth.currentUser);
+ if(hello){hello=false;toast('أهلًا '+esc((auth.currentUser.displayName||'').split(' ')[0])+' 🤍 إحصائياتك اتحفظت على حسابك')}}catch(e){fail(e)}acctRefresh()}
+window.ZK={
+ queue(){if(!auth.currentUser||!ready)return;clearTimeout(timer);timer=setTimeout(()=>push().catch(fail),15000)},
+ flush(){if(timer)push().catch(fail)},
+ async signIn(){
+  if(inApp){toast('افتح ذاكرون في Chrome أو Safari الأول، جوجل مش بتسمح بتسجيل الدخول من جوه واتساب أو فيسبوك');return}
+  const p=new GoogleAuthProvider();p.setCustomParameters({prompt:'select_account'});
+  hello=true;try{await signInWithPopup(auth,p)}catch(e){hello=false;
+   if(e.code==='auth/popup-blocked'||e.code==='auth/operation-not-supported-in-this-environment')return signInWithRedirect(auth,p);
+   if(e.code!=='auth/popup-closed-by-user'&&e.code!=='auth/cancelled-popup-request'){console.warn(e);toast('تعذّر تسجيل الدخول، جرّب تاني')}}},
+ async signOut(){try{await push()}catch(e){}ready=false;await signOut(auth)}
+};
+getRedirectResult(auth).catch(e=>console.warn(e));
+onAuthStateChanged(auth,u=>{ready=false;setUser(u);if(u)sync();else acctRefresh()});
+document.addEventListener('visibilitychange',()=>{if(!auth.currentUser)return;if(document.hidden)window.ZK.flush();else if(ready)sync()});
+window.addEventListener('online',()=>{if(auth.currentUser)sync()});
 </script>
 </body>
 </html>
